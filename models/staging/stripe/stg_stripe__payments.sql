@@ -12,9 +12,8 @@ renamed as (
         orderid as order_id,
         paymentmethod as payment_method,
         status,
-        amount,
-        created,
-        _batched_at
+        amount/100 as amount,
+        created
 
     from source
 
