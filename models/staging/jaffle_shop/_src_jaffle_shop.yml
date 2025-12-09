@@ -1,11 +1,14 @@
 sources:
   - name: jaffle_shop
+    description: A clone of Postgres Database
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
+        description: Raw Customer data
         columns:
           - name: id
+            description: Primary Key
             data_tests:
               - unique
               - not_null
@@ -15,6 +18,8 @@ sources:
             data_tests:
               - unique
               - not_null
+          - name: status
+            description: '{{ doc("order_status") }}'
         config:
           freshness:
             warn_after:
